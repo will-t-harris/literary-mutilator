@@ -1,29 +1,35 @@
 const paragraphs = document.getElementsByClassName('paragraph'); // this is a HTML collection
 const paragraphArray = Array.from(paragraphs); // Create array from HTML collection
-let secondParagraph = paragraphArray[1].textContent; // Select only the second paragraph
+const randomButton = document.getElementById('randomize');
 
-//Highlight entire paragraph on click
-document.getElementById('test').onclick = () => {
-	document.getElementById('test').classList.toggle('active');
+// Highlight entire paragraph on click
+document.getElementById('first').onclick = () => {
+	document.getElementById('first').classList.toggle('active');
+};
+
+document.getElementById('second').onclick = () => {
+	document.getElementById('second').classList.toggle('active');
+};
+
+document.getElementById('third').onclick = () => {
+	document.getElementById('third').classList.toggle('active');
 };
 
 // form string from all the paragraphs
-	let paragraphString = [].map.call(paragraphs, (node) => {
-		return node.textContent;
-	}).join("");
+let paragraphString = [].map.call(paragraphs, (node) => {
+	return node.textContent;
+}).join("");
 
 // form array of all the words from the paragraph string
 const wordsArray = paragraphString.split(' ');
-window.addEventListener('scroll', e => {
-	console.log(e);
-});
-
 
 // Shuffle words in random order function
-function shuffle(array) {
-	for(let i = 0; i < array.length; i++) {
+function shuffleWords(wordsArray) {
+	for(let i = 0; i < wordsArray.length; i++) {
 		const j = Math.floor(Math.random() * (i + 1));
-		[array[i], array[j]] = [array[j], array[i]];
+		[wordsArray[i], wordsArray[j]] = [wordsArray[j], wordsArray[i]];
 	}
 }
 
+
+randomButton.addEventListener('click', shuffleWords);
