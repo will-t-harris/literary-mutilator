@@ -3,7 +3,7 @@ const paragraphArray = Array.from(paragraphs);
 
 //Highlight entire paragraph
 document.getElementById('test').onclick = () => {
-	this.classList.toggle('active');
+	document.getElementById('test').classList.toggle('active');
 };
 
 // Highlight individual word on click
@@ -13,7 +13,8 @@ document.getElementById('test').onclick = () => {
 // 	console.log(target);
 // });
 //
-// // Find & Replace
-// findAndReplace = (findWord, replaceWord) => {
-//
-// }
+
+// Remove word on scroll
+let paragraphString = [].map.call(paragraphs, (node) => {
+	return node.textContent;
+}).join("");
