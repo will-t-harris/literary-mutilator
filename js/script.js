@@ -1,6 +1,7 @@
 const paragraphs = document.getElementsByClassName('paragraph'); // this is a HTML collection
-const paragraphArray = Array.from(paragraphs); // Create array from HTML collection
+const paragraphArray = [...paragraphs]; // Create array from HTML collection
 const randomButton = document.getElementById('randomize');
+const randomOutput = document.getElementById('randomizeOutput');
 
 // Highlight entire paragraph on click
 document.getElementById('first').onclick = () => {
@@ -15,10 +16,12 @@ document.getElementById('third').onclick = () => {
 	document.getElementById('third').classList.toggle('active');
 };
 
-// form string from all the paragraphs
-let paragraphString = [].map.call(paragraphs, (node) => {
-	return node.textContent;
-}).join("");
+// form string from HTMLCollection of paragraphs
+let paragraphString = paragraphArray.map((paragraph) => {
+	return paragraph.textContent;
+}).join(' ');
+
+
 
 // form array of all the words from the paragraph string
 const wordsArray = paragraphString.split(' ');
@@ -31,11 +34,8 @@ function shuffleWords(array) {
 	}
 }
 
-
+// call shuffleWords function and display output in paragraph element in DOM
 document.getElementById('randomize').addEventListener('mousedown', () => {
 	shuffleWords(wordsArray);
-	let wordsString = wordsArray.toString();
-	wordsString = wordsString.split(' ', 20);
-	console.log(wordsString);
-	document.getElementById('container').innerHTML = wordsString.split(' ', 20);
+	document.getElementById('randomizeOutput').innerHTML = wordsArray.toString();
 });
