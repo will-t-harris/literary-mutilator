@@ -21,8 +21,6 @@ let paragraphString = paragraphArray.map((paragraph) => {
 	return paragraph.textContent;
 }).join(' ');
 
-
-
 // form array of all the words from the paragraph string
 const wordsArray = paragraphString.split(' ');
 
