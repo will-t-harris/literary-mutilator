@@ -3,7 +3,7 @@ const paragraphArray = Array.from(paragraphs);
 
 //Highlight entire paragraph
 document.getElementById('test').onclick = () => {
-	document.getElementById('test').style.background = "yellow";
+	this.classList.toggle('active');
 };
 
 // Highlight individual word on click
