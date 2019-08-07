@@ -1,5 +1,5 @@
 const paragraphs = document.getElementsByClassName('paragraph'); // this is a HTML collection
-const paragraphArray = [...paragraphs]; // Create array from HTML collection
+const paragraphArray = [...paragraphs]; // Create array from HTML collection using spread operator
 const randomButton = document.getElementById('randomize');
 const randomOutput = document.getElementById('randomizeOutput');
 
@@ -16,7 +16,7 @@ document.getElementById('third').onclick = () => {
 	document.getElementById('third').classList.toggle('active');
 };
 
-// form string from HTMLCollection of paragraphs
+// form string from array
 let paragraphString = paragraphArray.map((paragraph) => {
 	return paragraph.textContent;
 }).join(' ');
