@@ -1,6 +1,5 @@
+// Highlight entire paragraph
 const paragraphs = document.getElementsByClassName('paragraph');
 
-// const paragraphsArray = Array.from(paragraphs);
-
 const paragraphArray = Array.from(paragraphs);
-paragraphArray.forEach(element => element.style.color = "red");
+paragraphArray.forEach(element => element.style.background = "yellow");
