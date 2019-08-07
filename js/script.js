@@ -7,6 +7,18 @@ document.getElementById('test').onclick = () => {
 	document.getElementById('test').classList.toggle('active');
 };
 
+// form string from all the paragraphs
+	let paragraphString = [].map.call(paragraphs, (node) => {
+		return node.textContent;
+	}).join("");
+
+// form array of all the words from the paragraph string
+const wordsArray = paragraphString.split(' ');
+window.addEventListener('scroll', e => {
+	console.log(e);
+});
+
+
 // Shuffle words in random order function
 function shuffle(array) {
 	for(let i = 0; i < array.length; i++) {
@@ -15,13 +27,3 @@ function shuffle(array) {
 	}
 }
 
-// form string from all the paragraphs
-let paragraphString = [].map.call(paragraphs, (node) => {
-	return node.textContent;
-}).join("");
-
-// form array of all the words from the paragraph string
-const wordsArray = paragraphString.split(' ');
-window.addEventListener('scroll', e => {
-	console.log(e);
-});
