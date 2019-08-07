@@ -34,6 +34,8 @@ function shuffleWords(array) {
 
 document.getElementById('randomize').addEventListener('mousedown', () => {
 	shuffleWords(wordsArray);
-	console.log(wordsArray);
-	document.getElementById('container').innerHTML = wordsArray.toString();
+	let wordsString = wordsArray.toString();
+	wordsString = wordsString.split(' ', 20);
+	console.log(wordsString);
+	document.getElementById('container').innerHTML = wordsString.split(' ', 20);
 });
