@@ -24,12 +24,16 @@ let paragraphString = [].map.call(paragraphs, (node) => {
 const wordsArray = paragraphString.split(' ');
 
 // Shuffle words in random order function
-function shuffleWords(wordsArray) {
-	for(let i = 0; i < wordsArray.length; i++) {
+function shuffleWords(array) {
+	for(let i = 0; i < array.length; i++) {
 		const j = Math.floor(Math.random() * (i + 1));
-		[wordsArray[i], wordsArray[j]] = [wordsArray[j], wordsArray[i]];
+		[array[i], array[j]] = [array[j], array[i]];
 	}
 }
 
 
-randomButton.addEventListener('click', shuffleWords);
+document.getElementById('randomize').addEventListener('mousedown', () => {
+	shuffleWords(wordsArray);
+	console.log(wordsArray);
+	document.getElementById('container').innerHTML = wordsArray.toString();
+});
