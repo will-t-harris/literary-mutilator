@@ -38,7 +38,13 @@ document.getElementById('randomize').addEventListener('mousedown', () => {
 	document.getElementById('randomizeOutput').innerHTML = wordsArray.toString();
 });
 
+// Keypress event
+function keyPressEvent() {
+
+}
+
 // DRAG AND DROP!
 function dragstart_handler(event) {
 	event.dataTransfer.setData("text/plain", event.target.innerText);
+	event.dataTransfer.dropEffect = "move";
 }
