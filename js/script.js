@@ -39,7 +39,7 @@ document.getElementById('randomize').addEventListener('mousedown', () => {
 });
 
 // Keypress event
-window.addEventListener('keyup', () => {
+window.addEventListener('keydown', () => {
 	document.getElementById('header').classList.toggle('pink');
 });
 
