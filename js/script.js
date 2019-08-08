@@ -53,3 +53,10 @@ function dragover_handler(event) {
 	event.preventDefault();
 	event.dataTransfer.dropEffect = "move";
 }
+
+function drop_handler(event) {
+	event.preventDefault();
+	// get the id of the target and add the moved element to the target's DOM
+	let data = event.dataTransfer.getData("text/plain");
+	event.target.appendChild(document.getElementById(data));
+}
