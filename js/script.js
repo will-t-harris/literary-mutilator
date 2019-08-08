@@ -37,3 +37,8 @@ document.getElementById('randomize').addEventListener('mousedown', () => {
 	shuffleWords(wordsArray);
 	document.getElementById('randomizeOutput').innerHTML = wordsArray.toString();
 });
+
+// DRAG AND DROP!
+function dragstart_handler(event) {
+	event.dataTransfer.setData("text/plain", event.target.innerText);
+}
