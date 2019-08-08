@@ -3,7 +3,8 @@ const paragraphArray = [...paragraphs]; // Create array from HTML collection usi
 const randomButton = document.getElementById('randomize');
 const randomOutput = document.getElementById('randomizeOutput');
 
-// Highlight entire paragraph on click
+
+// HIGHLIGHT WORDS SOLUTION!
 document.getElementById('first').onclick = () => {
 	document.getElementById('first').classList.toggle('active');
 };
@@ -16,6 +17,7 @@ document.getElementById('third').onclick = () => {
 	document.getElementById('third').classList.toggle('active');
 };
 
+// SHUFFLE WORDS SOLUTION!
 // form string from array
 let paragraphString = paragraphArray.map((paragraph) => {
 	return paragraph.textContent;
@@ -38,7 +40,7 @@ document.getElementById('randomize').addEventListener('mousedown', () => {
 	document.getElementById('randomizeOutput').innerHTML = wordsArray.toString();
 });
 
-// Keypress event
+// KEYPRESS EVENT SOLUTION!
 window.addEventListener('keydown', () => {
 	document.getElementById('header').classList.toggle('pink');
 });
