@@ -48,3 +48,8 @@ function dragstart_handler(event) {
 	event.dataTransfer.setData("text/plain", event.target.innerText);
 	event.dataTransfer.dropEffect = "move";
 }
+
+function dragover_handler(event) {
+	event.preventDefault();
+	event.dataTransfer.dropEffect = "move";
+}
