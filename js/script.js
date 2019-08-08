@@ -45,6 +45,7 @@ window.addEventListener('keydown', () => {
 
 // DRAG AND DROP!
 function dragstart_handler(event) {
+	event.dataTransfer.setData("text/plain", event.target.id);
 	event.dataTransfer.setData("text/plain", event.target.innerText);
 	event.dataTransfer.dropEffect = "move";
 }
@@ -58,5 +59,7 @@ function drop_handler(event) {
 	event.preventDefault();
 	// get the id of the target and add the moved element to the target's DOM
 	let data = event.dataTransfer.getData("text/plain");
-	event.target.appendChild(document.getElementById(data));
+	let paragraph = document.createElement('p');
+	paragraph.innerHTML = data;
+	event.target.appendChild(paragraph);
 }
