@@ -39,9 +39,9 @@ document.getElementById('randomize').addEventListener('mousedown', () => {
 });
 
 // Keypress event
-function keyPressEvent() {
-
-}
+window.addEventListener('keyup', () => {
+	document.getElementById('header').classList.toggle('pink');
+});
 
 // DRAG AND DROP!
 function dragstart_handler(event) {
