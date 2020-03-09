@@ -64,7 +64,7 @@ function dragover_handler(event) {
 
 function drop_handler(event) {
 	event.preventDefault();
-	// get the id of the target and add the moved element to the target's DOM
+	// append the moved data to the target's DOM in a paragraph tag
 	let data = event.dataTransfer.getData("text/plain");
 	let paragraph = document.createElement("p");
 	paragraph.innerHTML = data;
