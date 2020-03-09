@@ -4,16 +4,20 @@ const randomButton = document.getElementById("randomize");
 const randomOutput = document.getElementById("randomizeOutput");
 
 // HIGHLIGHT WORDS SOLUTION!
-document.getElementById("first").onclick = () => {
-	document.getElementById("first").classList.toggle("active");
+const firstParagraph = document.querySelector("#first");
+const secondParagraph = document.querySelector("#second");
+const thirdParagraph = document.querySelector("#third");
+
+firstParagraph.onclick = () => {
+	firstParagraph.classList.toggle("active");
 };
 
-document.getElementById("second").onclick = () => {
-	document.getElementById("second").classList.toggle("active");
+secondParagraph.onclick = () => {
+	secondParagraph.classList.toggle("active");
 };
 
-document.getElementById("third").onclick = () => {
-	document.getElementById("third").classList.toggle("active");
+thirdParagraph.onclick = () => {
+	thirdParagraph.classList.toggle("active");
 };
 
 // SHUFFLE WORDS SOLUTION!
