@@ -32,12 +32,12 @@ let paragraphString = paragraphArray
 const wordsArray = paragraphString.split(" ");
 
 // Shuffle words in random order function
-function shuffleWords(array) {
-	for (let i = 0; i < array.length; i++) {
-		const j = Math.floor(Math.random() * (i + 1));
-		[array[i], array[j]] = [array[j], array[i]];
-	}
-}
+const shuffleWords = array => {
+	array.forEach((_, index) => {
+		const j = Math.floor(Math.random() * (index + 1));
+		[array[index], array[j]] = [array[j], array[index]];
+	});
+};
 
 // call shuffleWords function and display output in paragraph element in DOM
 document.getElementById("randomize").addEventListener("mousedown", () => {
